@@ -79,8 +79,9 @@ export default {
 ```vue
 <template>
 <v-draggable-treeview v-model="items" group="hoge">
-  <template v-slot:prepend="{ item }">
-    <v-icon>mdi-file</v-icon>
+  <template v-slot:prepend="{ item, open }">
+    <v-icon v-if="item.children != null">{{ open ? "mdi-folder-open" : "mdi-folder"}}</v-icon>
+    <v-icon v-else>mdi-file</v-icon>
   </template>
   <template v-slot:label="{ item }">
     <span class="primary--text">{{ item.name }}</span>
