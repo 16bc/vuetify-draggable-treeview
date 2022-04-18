@@ -108,7 +108,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      open: false,
+      open: true,
       localValue: { ...this.value } as TreeItem,
     };
   },
